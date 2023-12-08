@@ -37,6 +37,7 @@ class Prompter(object):
             res = self.template["prompt_input"].format(
                 instruction=instruction, input=input
             )
+            print('tes')
         else:
             res = self.template["prompt_no_input"].format(
                 instruction=instruction
