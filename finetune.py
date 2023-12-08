@@ -215,8 +215,8 @@ def train(
 
     model = get_peft_model(model, config)
 
-    if data_path.endswith(".json") or data_path.endswith(".jsonl"):
-        data = load_dataset("json", data_files=data_path)
+    if data_path.endswith(".csv"):
+        data = load_dataset("csv", data_files=data_path)
     else:
         data = load_dataset(data_path)
 
