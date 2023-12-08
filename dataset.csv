@@ -16529,3 +16529,6729 @@ Get the ID of the current sprint and add all tasks owned by me to that sprint.,"
       ]
    }
 ]",,
+Search for work items related to 'TeamXYZ' and list all tasks and issues owned by user 'User-789',"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""TeamXYZ""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""User-789""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task"", ""issue""]
+         }
+      ]
+   }
+]",,
+Summarize objects after finding work items similar to 'PROD-987' and prioritize them.,"[
+   {
+      ""tool_name"": ""get_similar_work_item"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_id"",
+            ""argument_value"": ""PROD-987""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": [""task1"", ""issue2"", ""task3""]
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+List all tasks with priority 'low' and add them to the current sprint.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""low""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'Customer-123' and list all issues with priority 'p2'.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""Customer-123""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""issue""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p2""
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and prioritize P1 issues owned by 'Manager-456'.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p1""
+         },
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""Manager-456""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+List all issues with severity 'low' and source channel 'email'.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""issue""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": ""low""
+         },
+         {
+            ""argument_name"": ""ticket.source_channel"",
+            ""argument_value"": [""email""]
+         }
+      ]
+   }
+]",,
+Summarize all objects after searching for 'ProjectABC' and listing tasks associated with it.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""ProjectABC""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+List all work items in the 'deployment' stage owned by 'OpsTeam-789'.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""stage.name"",
+            ""argument_value"": ""deployment""
+         },
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""OpsTeam-789""
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and add all tasks with priority 'p3' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p3""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+List all tasks and issues with severity 'medium' and source channel 'web'.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task"", ""issue""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": ""medium""
+         },
+         {
+            ""argument_name"": ""ticket.source_channel"",
+            ""argument_value"": [""web""]
+         }
+      ]
+   }
+]",,
+Search for work items related to 'TeamDelta' and summarize them.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""TeamDelta""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+List all tasks with priority 'medium' and add them to the current sprint.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""medium""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Summarize issues similar to 'ENH-789' and create actionable tasks from the summary.,"[
+   {
+      ""tool_name"": ""get_similar_work_item"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_id"",
+            ""argument_value"": ""ENH-789""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""create_actionable_tasks_from_text"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""text"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+List all tasks and issues with severity 'high' and source channel 'email'.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task"", ""issue""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": ""high""
+         },
+         {
+            ""argument_name"": ""ticket.source_channel"",
+            ""argument_value"": [""email""]
+         }
+      ]
+   }
+]",,
+Search for work items related to 'Customer-456' and prioritize P0 issues.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""Customer-456""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p0""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and add all tasks with priority 'p1' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p1""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Summarize objects after searching for 'ProjectXYZ' and listing tasks associated with it.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""ProjectXYZ""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+List all work items in the 'review' stage owned by 'Lead-789'.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""stage.name"",
+            ""argument_value"": ""review""
+         },
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""Lead-789""
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and add all issues with priority 'p2' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""issue""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p2""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+List all tasks and issues with severity 'low' and priority 'p3'.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task"", ""issue""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": ""low""
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p3""
+         }
+      ]
+   }
+]",,
+Summarize objects after searching for 'ProjectGamma' and listing tasks associated with it.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""ProjectGamma""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+List all tasks and issues with severity 'medium' and source channel 'web'.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task"", ""issue""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": ""medium""
+         },
+         {
+            ""argument_name"": ""ticket.source_channel"",
+            ""argument_value"": [""web""]
+         }
+      ]
+   }
+]",,
+Search for work items related to 'TeamAlpha' and prioritize P1 issues.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""TeamAlpha""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p1""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and add all tasks with priority 'p2' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p2""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'Customer-789' and list all tasks owned by user 'User-123'.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""Customer-789""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""User-123""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         }
+      ]
+   }
+]",,
+Summarize all tasks and issues with severity 'high' owned by 'TeamDelta'.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task"", ""issue""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": ""high""
+         },
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""TeamDelta""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and add all issues with priority 'p0' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""issue""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p0""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'Customer-789' and list all issues with priority 'p1',"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""Customer-789""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""issue""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p1""
+         }
+      ]
+   }
+]",,
+List all tasks with priority 'low' and source channel 'web'.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""low""
+         },
+         {
+            ""argument_name"": ""ticket.source_channel"",
+            ""argument_value"": [""web""]
+         }
+      ]
+   }
+]",,
+Summarize objects after searching for 'ProjectAlpha' and listing tasks associated with it.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""ProjectAlpha""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and add all tasks with priority 'p2' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p2""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'TeamBeta' and prioritize P3 issues.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""TeamBeta""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p3""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+List all issues with priority 'p1' and source channel 'email'.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""issue""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p1""
+         },
+         {
+            ""argument_name"": ""ticket.source_channel"",
+            ""argument_value"": [""email""]
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and add all tasks with priority 'p3' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p3""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'Customer-456' and list all tasks owned by user 'User-789'.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""Customer-456""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""User-789""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         }
+      ]
+   }
+]",,
+Summarize issues similar to 'ENH-456' and create actionable tasks from the summary.,"[
+   {
+      ""tool_name"": ""get_similar_work_item"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_id"",
+            ""argument_value"": ""ENH-456""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""create_actionable_tasks_from_text"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""text"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+List all tasks with priority 'p0' and source channel 'slack'.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p0""
+         },
+         {
+            ""argument_name"": ""ticket.source_channel"",
+            ""argument_value"": [""slack""]
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and add all issues with severity 'medium' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""issue""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": ""medium""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'ProjectBeta' and prioritize P2 issues.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""ProjectBeta""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p2""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'Client-ABC' and list all tasks owned by user 'User-XYZ'.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""Client-ABC""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""User-XYZ""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and add all issues with severity 'low' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""issue""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": ""low""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Summarize objects after searching for 'ProjectDelta' and listing issues associated with it.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""ProjectDelta""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""issue""]
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+List all tasks and issues with severity 'medium' and source channel 'email'.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task"", ""issue""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": ""medium""
+         },
+         {
+            ""argument_name"": ""ticket.source_channel"",
+            ""argument_value"": [""email""]
+         }
+      ]
+   }
+]",,
+Search for work items related to 'Client-XYZ' and prioritize P2 issues.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""Client-XYZ""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p2""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'ProjectGamma' and list all issues with severity 'high'.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""ProjectGamma""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""issue""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": ""high""
+         }
+      ]
+   }
+]",,
+List all tasks with priority 'p0' and source channel 'slack'.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p0""
+         },
+         {
+            ""argument_name"": ""ticket.source_channel"",
+            ""argument_value"": [""slack""]
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and add all issues with severity 'high' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""issue""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": ""high""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'Customer-789' and list all tasks owned by user 'User-456'.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""Customer-789""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""User-456""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         }
+      ]
+   }
+]",,
+Summarize issues similar to 'ENH-789' and create actionable tasks from the summary.,"[
+   {
+      ""tool_name"": ""get_similar_work_item"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_id"",
+            ""argument_value"": ""ENH-789""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""create_actionable_tasks_from_text"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""text"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+List all tasks with priority 'p1' and source channel 'web'.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p1""
+         },
+         {
+            ""argument_name"": ""ticket.source_channel"",
+            ""argument_value"": [""web""]
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and add all issues with severity 'high' and 'low' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""issue""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": [""high"", ""low""]
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'ProjectTheta' and prioritize P1 issues.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""ProjectTheta""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p1""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+List all work items owned by 'User-789' and summarize them.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""User-789""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'Project-Alpha' and prioritize P1 issues.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""Project-Alpha""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p1""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Summarize tasks with priority 'p2' and owned by 'User-123'.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p2""
+         },
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""User-123""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and add all tasks owned by 'User-456' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""User-456""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[1]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+List all issues with priority 'p3' and summarize them.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""issue""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p3""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'Client-456' and prioritize P2 tasks.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""Client-456""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p2""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and add all issues with severity 'low' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""issue""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": ""low""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'Project-Gamma' and list all tasks with priority 'p1'.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""Project-Gamma""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p1""
+         }
+      ]
+   }
+]",,
+Summarize objects after searching for 'Customer-789' and listing tasks associated with it.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""Customer-789""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and add all tasks with priority 'p3' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p3""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'Project-Delta' and prioritize P2 issues.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""Project-Delta""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p2""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Summarize tasks with priority 'p1' and owned by 'User-789'.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p1""
+         },
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""User-789""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and add all issues with severity 'medium' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""issue""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": ""medium""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'Client-789' and list all tasks with priority 'p2'.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""Client-789""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p2""
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and add all tasks with priority 'p1' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p1""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+List all tasks created by 'User-789' and summarize them.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""created_by"",
+            ""argument_value"": [""User-789""]
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'Project-Beta' and prioritize P3 issues.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""Project-Beta""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p3""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Summarize issues with severity 'high' and owned by 'User-123'.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""issue""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": ""high""
+         },
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""User-123""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and add all tasks owned by 'User-456' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""User-456""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[1]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+List all issues with priority 'p2' and summarize them.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""issue""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p2""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'Client-456' and prioritize P1 tasks.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""Client-456""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p1""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]
+",,
+Get the ID of the current sprint and add all issues with severity 'low' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""issue""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": ""low""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'Project-Gamma' and list all tasks with priority 'p1'.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""Project-Gamma""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p1""
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and add all tasks with priority 'p3' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p3""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'Project-Delta' and prioritize P2 issues.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""Project-Delta""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p2""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Summarize tasks with priority 'p1' and owned by 'User-789'.,"[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p1""
+         },
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""User-789""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+Get the ID of the current sprint and add all issues with severity 'medium' to that sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""issue""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": ""medium""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Search for work items related to 'Client-789' and list all tasks with priority 'p2'.,"[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""Client-789""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": ""p2""
+         }
+      ]
+   }
+]",,
+"Find all work items owned by user ""DEVU-456"" with priority ""p1"" and summarize them.","[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": [""DEVU-456""]
+         },
+         {
+            ""argument_name"": ""issue.priority"",
+            ""argument_value"": [""p1""]
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+"List all tickets associated with Rev organization ""REV-456"" and owned by user ""DEVU-789""","[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""ticket.rev_org"",
+            ""argument_value"": [""REV-456""]
+         },
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": [""DEVU-789""]
+         }
+      ]
+   }
+]",,
+"Search for an object with the query ""ImportantPart"" and create actionable tasks from the text.","[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""ImportantPart""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""create_actionable_tasks_from_text"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""text"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+Get the current user's ID and return the ID of the current sprint.,"[
+   {
+      ""tool_name"": ""who_am_i"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   }
+]",,
+"Find all work items in the triage stage under part ""PROD-456"" and prioritize them.","[
+   {
+      ""tool_name"": ""who_am_i"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""stage.name"",
+            ""argument_value"": [""triage""]
+         },
+         {
+            ""argument_name"": ""applies_to_part"",
+            ""argument_value"": [""PROD-456""]
+         },
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+"Search for objects related to ""ImportantCustomer,"" list all tasks associated with them, and summarize the tasks.","[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""ImportantCustomer""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""applies_to_part"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+Prioritize all work items in the current sprint and add them to a new sprint.,"[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[2]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+"Summarize all objects returned from a search for ""CriticalPart.""","[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""CriticalPart""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+"Find work items owned by users ""DEVU-123"" and ""DEVU-456"" that need a response.","[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": [""DEVU-123"", ""DEVU-456""]
+         },
+         {
+            ""argument_name"": ""ticket.needs_response"",
+            ""argument_value"": []
+         }
+      ]
+   }
+]",,
+"Get the ID of the current sprint and return a list of work items similar to ""TKT-789.""","[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""get_similar_work_item"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_id"",
+            ""argument_value"": ""TKT-789""
+         }
+      ]
+   }
+]",,
+"List all work items in the ""design"" stage with severity ""medium"" and owned by the current user.","[
+   {
+      ""tool_name"": ""who_am_i"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""stage.name"",
+            ""argument_value"": [""design""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": [""medium""]
+         },
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+"Search for objects related to ""ProjectXYZ,"" get the Rev organizations associated with them, and return a list of work items for those Rev organizations.","[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""ProjectXYZ""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""ticket.rev_org"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+"Summarize all work items associated with part ""ENH-456"" and prioritize them.","[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""applies_to_part"",
+            ""argument_value"": [""ENH-456""]
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+"Find all work items of type ""task"" and create actionable tasks from their descriptions.","[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""create_actionable_tasks_from_text"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""text"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+"Search for objects related to ""CriticalComponent,"" get their IDs, and summarize them.","[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""CriticalComponent""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+"List all work items associated with part ""PROD-789"" owned by the current user and in the ""testing"" stage.","[
+   {
+      ""tool_name"": ""who_am_i"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""applies_to_part"",
+            ""argument_value"": [""PROD-789""]
+         },
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": ""$$PREV[0]""
+         },
+         {
+            ""argument_name"": ""stage.name"",
+            ""argument_value"": [""testing""]
+         }
+      ]
+   }
+]",,
+"Get the current user's ID and return a list of work items with severity ""high"" created by that user.","[
+   {
+      ""tool_name"": ""who_am_i"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": [""high""]
+         },
+         {
+            ""argument_name"": ""created_by"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+"Find work items associated with part ""FEAT-789"" and owned by user ""DEVU-789"" that need a response.","[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""applies_to_part"",
+            ""argument_value"": [""FEAT-789""]
+         },
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": [""DEVU-789""]
+         },
+         {
+            ""argument_name"": ""ticket.needs_response"",
+            ""argument_value"": []
+         }
+      ]
+   }
+]",,
+"Search for objects related to ""CriticalTask,"" list all tasks associated with them, and create actionable tasks from their descriptions.","[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""CriticalTask""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""applies_to_part"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""create_actionable_tasks_from_text"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""text"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+"Find all work items associated with the current sprint, summarize them, and prioritize.","[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[2]""
+         }
+      ]
+   }
+]",,
+"Search for objects related to ""ImportantProject,"" get their Rev organizations, and list work items associated with those Rev organizations.","[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""ImportantProject""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""ticket.rev_org"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+"List all high severity tickets owned by user ""DEVU-789"" that need a response.","[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": [""high""]
+         },
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": [""DEVU-789""]
+         },
+         {
+            ""argument_name"": ""ticket.needs_response"",
+            ""argument_value"": []
+         }
+      ]
+   }
+]",,
+"Get the ID of the current sprint, find work items associated with it, and create actionable tasks from their descriptions.","[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""create_actionable_tasks_from_text"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""text"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+"Search for objects related to ""CriticalFeature,"" get their IDs, and prioritize them.","[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""CriticalFeature""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+"List all work items owned by the current user with severity ""blocker"" and summarize them.","[
+   {
+      ""tool_name"": ""who_am_i"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": [""$$PREV[0]""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": [""blocker""]
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""summarize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[1]""
+         }
+      ]
+   }
+]",,
+"Find work items in the ""development"" stage owned by user ""DEVU-456"" and prioritize them.","[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""stage.name"",
+            ""argument_value"": [""development""]
+         },
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": [""DEVU-456""]
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""prioritize_objects"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""objects"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+"Search for objects related to ""CriticalComponent,"" list all tasks associated with them, and add them to the current sprint.","[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""CriticalComponent""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""type"",
+            ""argument_value"": [""task""]
+         },
+         {
+            ""argument_name"": ""applies_to_part"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[1]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+"Get the ID of the current sprint and return a list of work items similar to ""TKT-456.","[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""get_similar_work_item"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_id"",
+            ""argument_value"": ""TKT-456""
+         }
+      ]
+   }
+]",,
+"Search for objects related to ""CriticalProject,"" get their Rev organizations, and list work items for those Rev organizations
+","[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""CriticalProject""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""ticket.rev_org"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+"Find all work items in the ""review"" stage with severity ""low"" owned by user ""DEVU-123.","[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""stage.name"",
+            ""argument_value"": [""review""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": [""low""]
+         },
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": [""DEVU-123""]
+         }
+      ]
+   }
+]",,
+"List all work items owned by the current user with severity ""medium"" and add them to a new sprint.","[
+   {
+      ""tool_name"": ""who_am_i"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": [""$$PREV[0]""]
+         },
+         {
+            ""argument_name"": ""ticket.severity"",
+            ""argument_value"": [""medium""]
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""add_work_items_to_sprint"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_ids"",
+            ""argument_value"": ""$$PREV[1]""
+         },
+         {
+            ""argument_name"": ""sprint_id"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+"Search for objects related to ""ProjectABC,"" get their Rev organizations, and return a list of work items for those Rev organizations.","[
+   {
+      ""tool_name"": ""search_object_by_name"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""query"",
+            ""argument_value"": ""ProjectABC""
+         }
+      ]
+   },
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""ticket.rev_org"",
+            ""argument_value"": ""$$PREV[0]""
+         }
+      ]
+   }
+]",,
+"Get the ID of the current sprint and return a list of work items similar to ""TKT-789.""","[
+   {
+      ""tool_name"": ""get_sprint_id"",
+      ""arguments"": []
+   },
+   {
+      ""tool_name"": ""get_similar_work_item"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""work_id"",
+            ""argument_value"": ""TKT-789""
+         }
+      ]
+   }
+]",,
+"List all work items associated with part ""ENH-789"" owned by user ""DEVU-456"" that need a response.","[
+   {
+      ""tool_name"": ""works_list"",
+      ""arguments"": [
+         {
+            ""argument_name"": ""applies_to_part"",
+            ""argument_value"": [""ENH-789""]
+         },
+         {
+            ""argument_name"": ""owned_by"",
+            ""argument_value"": [""DEVU-456""]
+         },
+         {
+            ""argument_name"": ""ticket.needs_response"",
+            ""argument_value"": []
+         }
+      ]
+   }
+]",,
+"Summarize all work items with severity ""medium"" and owned by the current user.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""ticket.severity"",
+                ""argument_value"": [""medium""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""summarize_objects"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""objects"",
+                ""argument_value"": ""$$PREV[1]""
+            }
+        ]
+    }
+]",,
+"Search for objects related to ""CriticalTask,"" get their IDs, and prioritize them.","[
+    {
+        ""tool_name"": ""search_object_by_name"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""query"",
+                ""argument_value"": ""CriticalTask""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""prioritize_objects"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""objects"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"List all work items in the ""analysis"" stage with severity ""high"" and owned by user ""DEVU-789.""","[
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""stage.name"",
+                ""argument_value"": [""analysis""]
+            },
+            {
+                ""argument_name"": ""ticket.severity"",
+                ""argument_value"": [""high""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": [""DEVU-789""]
+            }
+        ]
+    }
+]",,
+"Get the ID of the current sprint, find work items associated with it, and add them to a new sprint.","[
+    {
+        ""tool_name"": ""get_sprint_id"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""sprint_id"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""add_work_items_to_sprint"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_ids"",
+                ""argument_value"": ""$$PREV[1]""
+            },
+            {
+                ""tool_name"": ""get_sprint_id"",
+                ""arguments"": []
+            }
+        ]
+    }
+]",,
+"Search for objects related to ""ProjectX,"" get their Rev organizations, and list work items for those Rev organizations.","[
+    {
+        ""tool_name"": ""search_object_by_name"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""query"",
+                ""argument_value"": ""ProjectX""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""ticket.rev_org"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"Summarize all work items with severity ""low"" and in the ""development"" stage owned by user ""DEVU-456.","[
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""ticket.severity"",
+                ""argument_value"": [""low""]
+            },
+            {
+                ""argument_name"": ""stage.name"",
+                ""argument_value"": [""development""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": [""DEVU-456""]
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""summarize_objects"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""objects"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"Get the current user's ID and return a list of work items similar to ""TKT-789.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""get_similar_work_item"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_id"",
+                ""argument_value"": ""TKT-789""
+            }
+        ]
+    }
+]",,
+"Search for objects related to ""CriticalComponent,"" get their IDs, and return a list of work items for those IDs.","[
+    {
+        ""tool_name"": ""search_object_by_name"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""query"",
+                ""argument_value"": ""CriticalComponent""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""type"",
+                ""argument_value"": [""issue"", ""ticket"", ""task""]
+            },
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"Find work items associated with part ""ENH-123"" owned by the current user that need a response.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": [""ENH-123""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": ""$$PREV[0]""
+            },
+            {
+                ""argument_name"": ""ticket.needs_response"",
+                ""argument_value"": []
+            }
+        ]
+    }
+]",,
+"Get the current sprint ID and return a list of work items similar to ""TKT-456.","[
+    {
+        ""tool_name"": ""get_sprint_id"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""get_similar_work_item"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_id"",
+                ""argument_value"": ""TKT-456""
+            }
+        ]
+    }
+]",,
+"List all work items associated with part ""PROD-789"" owned by the current user and in the ""testing"" stage.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": [""PROD-789""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": ""$$PREV[0]""
+            },
+            {
+                ""argument_name"": ""stage.name"",
+                ""argument_value"": [""testing""]
+            }
+        ]
+    }
+]",,
+"Get the current user's ID and return a list of work items with severity ""high"" created by that user.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""ticket.severity"",
+                ""argument_value"": [""high""]
+            },
+            {
+                ""argument_name"": ""created_by"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"Find work items associated with part ""FEAT-789"" and owned by user ""DEVU-789"" that need a response.","[
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": [""FEAT-789""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": [""DEVU-789""]
+            },
+            {
+                ""argument_name"": ""ticket.needs_response"",
+                ""argument_value"": []
+            }
+        ]
+    }
+]",,
+"Search for objects related to ""CriticalTask,"" list all tasks associated with them, and create actionable tasks from their descriptions.","[
+    {
+        ""tool_name"": ""search_object_by_name"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""query"",
+                ""argument_value"": ""CriticalTask""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""type"",
+                ""argument_value"": [""task""]
+            },
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""create_actionable_tasks_from_text"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""text"",
+                ""argument_value"": ""$$PREV[1]""
+            }
+        ]
+    }
+]",,
+"Get the ID of the current sprint and return a list of work items similar to ""TKT-123.","[
+    {
+        ""tool_name"": ""get_sprint_id"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""get_similar_work_item"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_id"",
+                ""argument_value"": ""TKT-123""
+            }
+        ]
+    }
+]",,
+"Search for objects related to ""CriticalTask,"" get their IDs, and summarize them.","[
+    {
+        ""tool_name"": ""search_object_by_name"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""query"",
+                ""argument_value"": ""CriticalTask""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""summarize_objects"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""objects"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"List all work items in the ""design"" stage owned by user ""DEVU-456"" with severity ""medium.","[
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""stage.name"",
+                ""argument_value"": [""design""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": [""DEVU-456""]
+            },
+            {
+                ""argument_name"": ""ticket.severity"",
+                ""argument_value"": [""medium""]
+            }
+        ]
+    }
+]",,
+"Get the ID of the current sprint, find work items associated with it, and create actionable tasks from their descriptions.","[
+    {
+        ""tool_name"": ""get_sprint_id"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""sprint_id"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""create_actionable_tasks_from_text"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""text"",
+                ""argument_value"": ""$$PREV[1]""
+            }
+        ]
+    }
+]",,
+"Search for objects related to ""ImportantFeature,"" get their IDs, and prioritize them.","[
+    {
+        ""tool_name"": ""search_object_by_name"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""query"",
+                ""argument_value"": ""ImportantFeature""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""prioritize_objects"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""objects"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"List all work items owned by the current user with severity ""blocker"" in the ""development"" stage.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": [""$$PREV[0]""]
+            },
+            {
+                ""argument_name"": ""ticket.severity"",
+                ""argument_value"": [""blocker""]
+            },
+            {
+                ""argument_name"": ""stage.name"",
+                ""argument_value"": [""development""]
+            }
+        ]
+    }
+]",,
+"Get the current user's ID and return a list of work items similar to ""TKT-456.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""get_similar_work_item"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_id"",
+                ""argument_value"": ""TKT-456""
+            }
+        ]
+    }
+]",,
+"List all work items associated with part ""ENH-456"" owned by user ""DEVU-789"" that need a response.","[
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": [""ENH-456""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": [""DEVU-789""]
+            },
+            {
+                ""argument_name"": ""ticket.needs_response"",
+                ""argument_value"": []
+            }
+        ]
+    }
+]",,
+"Get the ID of the current sprint and return a list of work items similar to ""TKT-789.""","[
+    {
+        ""tool_name"": ""get_sprint_id"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""get_similar_work_item"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_id"",
+                ""argument_value"": ""TKT-789""
+            }
+        ]
+    }
+]",,
+"Search for objects related to ""ProjectY,"" get their Rev organizations, and list work items for those Rev organizations.","[
+    {
+        ""tool_name"": ""search_object_by_name"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""query"",
+                ""argument_value"": ""ProjectY""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""ticket.rev_org"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"Summarize all work items with severity ""high"" and in the ""testing"" stage owned by user ""DEVU-456","[
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""ticket.severity"",
+                ""argument_value"": [""high""]
+            },
+            {
+                ""argument_name"": ""stage.name"",
+                ""argument_value"": [""testing""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": [""DEVU-456""]
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""summarize_objects"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""objects"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"Get the current user's ID and return a list of work items with severity ""medium"" created by that user.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""ticket.severity"",
+                ""argument_value"": [""medium""]
+            },
+            {
+                ""argument_name"": ""created_by"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"Find work items associated with part ""PROD-123"" and owned by user ""DEVU-123"" that need a response.","[
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": [""PROD-123""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": [""DEVU-123""]
+            },
+            {
+                ""argument_name"": ""ticket.needs_response"",
+                ""argument_value"": []
+            }
+        ]
+    }
+]",,
+"Get the current sprint ID and return a list of work items similar to ""TKT-123.","[
+    {
+        ""tool_name"": ""get_sprint_id"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""get_similar_work_item"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_id"",
+                ""argument_value"": ""TKT-123""
+            }
+        ]
+    }
+]",,
+"List all work items in the ""triage"" stage under part ""FEAT-456"" owned by the current user. Summarize them.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""stage.name"",
+                ""argument_value"": [""triage""]
+            },
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": [""FEAT-456""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""summarize_objects"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""objects"",
+                ""argument_value"": ""$$PREV[1]""
+            }
+        ]
+    }
+]",,
+"Search for objects related to ""CriticalComponent,"" get their IDs, and return a list of work items for those IDs.","[
+    {
+        ""tool_name"": ""search_object_by_name"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""query"",
+                ""argument_value"": ""CriticalComponent""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""type"",
+                ""argument_value"": [""issue"", ""ticket"", ""task""]
+            },
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+" Get the current user's ID and return a list of work items similar to ""TKT-789.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""get_similar_work_item"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_id"",
+                ""argument_value"": ""TKT-789""
+            }
+        ]
+    }
+]",,
+"List all work items in the ""review"" stage under part ""ENH-456"" owned by the current user. Summarize them.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""stage.name"",
+                ""argument_value"": [""review""]
+            },
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": [""ENH-456""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""summarize_objects"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""objects"",
+                ""argument_value"": ""$$PREV[1]""
+            }
+        ]
+    }
+]",,
+" Get the current sprint ID and return a list of work items similar to ""TKT-123.","[
+    {
+        ""tool_name"": ""get_sprint_id"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""get_similar_work_item"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_id"",
+                ""argument_value"": ""TKT-123""
+            }
+        ]
+    }
+]",,
+"List all work items in the ""analysis"" stage owned by user ""DEVU-456"" with severity ""low.","[
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""stage.name"",
+                ""argument_value"": [""analysis""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": [""DEVU-456""]
+            },
+            {
+                ""argument_name"": ""ticket.severity"",
+                ""argument_value"": [""low""]
+            }
+        ]
+    }
+]",,
+"Get the ID of the current sprint, find work items associated with it, and add them to a new sprint.","[
+    {
+        ""tool_name"": ""get_sprint_id"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""sprint_id"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""add_work_items_to_sprint"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_ids"",
+                ""argument_value"": ""$$PREV[1]""
+            },
+            {
+                ""tool_name"": ""get_sprint_id"",
+                ""arguments"": []
+            }
+        ]
+    }
+]",,
+"Search for objects related to ""ImportantFeature,"" get their IDs, and list work items for those IDs","[
+    {
+        ""tool_name"": ""search_object_by_name"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""query"",
+                ""argument_value"": ""ImportantFeature""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""type"",
+                ""argument_value"": [""issue"", ""ticket"", ""task""]
+            },
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"Find work items associated with part ""PROD-789"" and owned by user ""DEVU-789"" that need a response.","[
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": [""PROD-789""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": [""DEVU-789""]
+            },
+            {
+                ""argument_name"": ""ticket.needs_response"",
+                ""argument_value"": []
+            }
+        ]
+    }
+]",,
+"List all work items associated with part ""FEAT-789"" owned by the current user and in the ""testing"" stage.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": [""FEAT-789""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": ""$$PREV[0]""
+            },
+            {
+                ""argument_name"": ""stage.name"",
+                ""argument_value"": [""testing""]
+            }
+        ]
+    }
+]",,
+"Get the current user's ID and return a list of work items with severity ""high"" created by that user.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""ticket.severity"",
+                ""argument_value"": [""high""]
+            },
+            {
+                ""argument_name"": ""created_by"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"Search for objects related to ""CriticalTask,"" list all tasks associated with them, and create actionable tasks from their descriptions.","[
+    {
+        ""tool_name"": ""search_object_by_name"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""query"",
+                ""argument_value"": ""CriticalTask""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""type"",
+                ""argument_value"": [""task""]
+            },
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""create_actionable_tasks_from_text"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""text"",
+                ""argument_value"": ""$$PREV[1]""
+            }
+        ]
+    }
+]",,
+"Get the ID of the current sprint and return a list of work items similar to ""TKT-123.","[
+    {
+        ""tool_name"": ""get_sprint_id"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""get_similar_work_item"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_id"",
+                ""argument_value"": ""TKT-123""
+            }
+        ]
+    }
+]",,
+"List all work items in the ""triage"" stage under part ""FEAT-456"" owned by the current user. Summarize them.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""stage.name"",
+                ""argument_value"": [""triage""]
+            },
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": [""FEAT-456""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""summarize_objects"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""objects"",
+                ""argument_value"": ""$$PREV[1]""
+            }
+        ]
+    }
+]",,
+"Get the current user's ID and return a list of work items with severity ""medium"" created by that user.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""ticket.severity"",
+                ""argument_value"": [""medium""]
+            },
+            {
+                ""argument_name"": ""created_by"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"Search for objects related to ""CriticalComponent,"" get their IDs, and prioritize them.","[
+    {
+        ""tool_name"": ""search_object_by_name"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""query"",
+                ""argument_value"": ""CriticalComponent""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""prioritize_objects"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""objects"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"List all work items owned by the current user with severity ""blocker"" in the ""development"" stage.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": [""$$PREV[0]""]
+            },
+            {
+                ""argument_name"": ""ticket.severity"",
+                ""argument_value"": [""blocker""]
+            },
+            {
+                ""argument_name"": ""stage.name"",
+                ""argument_value"": [""development""]
+            }
+        ]
+    }
+]",,
+"Get the current user's ID and return a list of work items similar to ""TKT-456.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""get_similar_work_item"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_id"",
+                ""argument_value"": ""TKT-456""
+            }
+        ]
+    }
+]",,
+"List all work items associated with part ""ENH-789"" owned by user ""DEVU-123"" that need a response.","[
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": [""ENH-789""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": [""DEVU-123""]
+            },
+            {
+                ""argument_name"": ""ticket.needs_response"",
+                ""argument_value"": []
+            }
+        ]
+    }
+]",,
+"Get the ID of the current sprint and return a list of work items similar to ""TKT-789.""","[
+    {
+        ""tool_name"": ""get_sprint_id"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""get_similar_work_item"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_id"",
+                ""argument_value"": ""TKT-789""
+            }
+        ]
+    }
+]",,
+"Find work items associated with part ""PROD-456"" and owned by user ""DEVU-456"" that need a response.","[
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": [""PROD-456""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": [""DEVU-456""]
+            },
+            {
+                ""argument_name"": ""ticket.needs_response"",
+                ""argument_value"": []
+            }
+        ]
+    }
+]",,
+"Get the current sprint ID and return a list of work items similar to ""TKT-123.","[
+    {
+        ""tool_name"": ""get_sprint_id"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""get_similar_work_item"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_id"",
+                ""argument_value"": ""TKT-123""
+            }
+        ]
+    }
+]",,
+"List all work items in the ""triage"" stage under part ""FEAT-789"" owned by the current user. Summarize them.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""stage.name"",
+                ""argument_value"": [""triage""]
+            },
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": [""FEAT-789""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""summarize_objects"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""objects"",
+                ""argument_value"": ""$$PREV[1]""
+            }
+        ]
+    }
+]",,
+"Get the ID of the current sprint and return a list of work items similar to ""TKT-456.","[
+    {
+        ""tool_name"": ""get_sprint_id"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""get_similar_work_item"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_id"",
+                ""argument_value"": ""TKT-456""
+            }
+        ]
+    }
+]",,
+"List all work items in the ""design"" stage owned by user ""DEVU-789"" with severity ""medium.","[
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""stage.name"",
+                ""argument_value"": [""design""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": [""DEVU-789""]
+            },
+            {
+                ""argument_name"": ""ticket.severity"",
+                ""argument_value"": [""medium""]
+            }
+        ]
+    }
+]",,
+"Get the ID of the current sprint, find work items associated with it, and add them to a new sprint.","[
+    {
+        ""tool_name"": ""get_sprint_id"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""sprint_id"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""add_work_items_to_sprint"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_ids"",
+                ""argument_value"": ""$$PREV[1]""
+            },
+            {
+                ""argument_name"": ""sprint_id"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"Search for objects related to ""ImportantFeature,"" get their IDs, and prioritize them.","[
+    {
+        ""tool_name"": ""search_object_by_name"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""query"",
+                ""argument_value"": ""ImportantFeature""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""prioritize_objects"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""objects"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"Get the current sprint ID and return a list of work items similar to ""TKT-789.","[
+    {
+        ""tool_name"": ""get_sprint_id"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""get_similar_work_item"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_id"",
+                ""argument_value"": ""TKT-789""
+            }
+        ]
+    }
+]",,
+" List all work items in the ""analysis"" stage owned by user ""DEVU-456"" with severity ""low.""","[
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""stage.name"",
+                ""argument_value"": [""analysis""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": [""DEVU-456""]
+            },
+            {
+                ""argument_name"": ""ticket.severity"",
+                ""argument_value"": [""low""]
+            }
+        ]
+    }
+]",,
+"Get the ID of the current sprint, find work items associated with it, and create actionable tasks from their descriptions.","[
+    {
+        ""tool_name"": ""get_sprint_id"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""sprint_id"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""create_actionable_tasks_from_text"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""text"",
+                ""argument_value"": ""$$PREV[1]""
+            }
+        ]
+    }
+]",,
+"Get the current user's ID and return a list of work items with severity ""high"" created by that user.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""ticket.severity"",
+                ""argument_value"": [""high""]
+            },
+            {
+                ""argument_name"": ""created_by"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"Search for objects related to ""CriticalTask,"" list all tasks associated with them, and create actionable tasks from their descriptions.","[
+    {
+        ""tool_name"": ""search_object_by_name"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""query"",
+                ""argument_value"": ""CriticalTask""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""type"",
+                ""argument_value"": [""task""]
+            },
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""create_actionable_tasks_from_text"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""text"",
+                ""argument_value"": ""$$PREV[1]""
+            }
+        ]
+    }
+]",,
+" List all work items in the ""triage"" stage under part ""FEAT-456"" owned by the current user. Summarize them.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""stage.name"",
+                ""argument_value"": [""triage""]
+            },
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": [""FEAT-456""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""summarize_objects"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""objects"",
+                ""argument_value"": ""$$PREV[1]""
+            }
+        ]
+    }
+]",,
+"Search for objects related to ""CriticalComponent,"" get their IDs, and return a list of work items for those IDs.","[
+    {
+        ""tool_name"": ""search_object_by_name"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""query"",
+                ""argument_value"": ""CriticalComponent""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""type"",
+                ""argument_value"": [""issue"", ""ticket"", ""task""]
+            },
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"Get the current user's ID and return a list of work items with severity ""medium"" created by that user.","[
+    {
+        ""tool_name"": ""who_am_i"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""ticket.severity"",
+                ""argument_value"": [""medium""]
+            },
+            {
+                ""argument_name"": ""created_by"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"List all work items in the ""coding"" stage owned by user ""DEVU-123"" with severity ""high.""","[
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""stage.name"",
+                ""argument_value"": [""coding""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": [""DEVU-123""]
+            },
+            {
+                ""argument_name"": ""ticket.severity"",
+                ""argument_value"": [""high""]
+            }
+        ]
+    }
+]",,
+"Get the ID of the current sprint, find work items associated with it, and add them to a new sprint.","[
+    {
+        ""tool_name"": ""get_sprint_id"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""sprint_id"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""add_work_items_to_sprint"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_ids"",
+                ""argument_value"": ""$$PREV[1]""
+            },
+            {
+                ""argument_name"": ""sprint_id"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"List all work items with severity ""blocker"" and in the ""development"" stage. Summarize them.","[
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""ticket.severity"",
+                ""argument_value"": [""blocker""]
+            },
+            {
+                ""argument_name"": ""stage.name"",
+                ""argument_value"": [""development""]
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""summarize_objects"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""objects"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"Get the current sprint ID and return a list of work items similar to ""TKT-456.""","[
+    {
+        ""tool_name"": ""get_sprint_id"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""get_similar_work_item"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_id"",
+                ""argument_value"": ""TKT-456""
+            }
+        ]
+    }
+]",,
+"Search for objects related to ""CriticalTask,"" get their IDs, and prioritize them.","[
+    {
+        ""tool_name"": ""search_object_by_name"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""query"",
+                ""argument_value"": ""CriticalTask""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""prioritize_objects"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""objects"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    }
+]",,
+"Get the current sprint ID and return a list of work items similar to ""TKT-123.""","[
+    {
+        ""tool_name"": ""get_sprint_id"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""get_similar_work_item"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_id"",
+                ""argument_value"": ""TKT-123""
+            }
+        ]
+    }
+]",,
+"List all work items in the ""analysis"" stage owned by user ""DEVU-456"" with severity ""low.""","[
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""stage.name"",
+                ""argument_value"": [""analysis""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": [""DEVU-456""]
+            },
+            {
+                ""argument_name"": ""ticket.severity"",
+                ""argument_value"": [""low""]
+            }
+        ]
+    }
+]",,
+"Get the ID of the current sprint, find work items associated with it, and add them to a new sprint.","[
+    {
+        ""tool_name"": ""get_sprint_id"",
+        ""arguments"": []
+    },
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""sprint_id"",
+                ""argument_value"": ""$$PREV[0]""
+            }
+        ]
+    },
+    {
+        ""tool_name"": ""add_work_items_to_sprint"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""work_ids"",
+                ""argument_value"": ""$$PREV[1]""
+            },
+            {
+                ""tool_name"": ""get_sprint_id"",
+                ""arguments"": []
+            }
+        ]
+    }
+]",,
+"Find work items associated with part ""PROD-789"" and owned by user ""DEVU-789"" that need a response.","[
+    {
+        ""tool_name"": ""works_list"",
+        ""arguments"": [
+            {
+                ""argument_name"": ""applies_to_part"",
+                ""argument_value"": [""PROD-789""]
+            },
+            {
+                ""argument_name"": ""owned_by"",
+                ""argument_value"": [""DEVU-789""]
+            },
+            {
+                ""argument_name"": ""ticket.needs_response"",
+                ""argument_value"": []
+            }
+        ]
+    }
+]",,
+"Summarize all tasks related to part ""PROD-789"" created by user ""DEVU-456"".","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""applies_to_part"",
+        ""argument_value"": [""PROD-789""]
+      },
+      {
+        ""argument_name"": ""created_by"",
+        ""argument_value"": [""DEVU-456""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Search for objects related to the query ""Customer123"", retrieve the associated work items, and summarize them.","[
+  {
+    ""tool_name"": ""search_object_by_name"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""query"",
+        ""argument_value"": ""Customer123""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""ticket.rev_org"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current user ID and list all work items owned by that user in the ""triage"" stage. Summarize the results.","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""triage""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  }
+]",,
+"Given a text ""MeetingNotes"", create actionable tasks from the text, retrieve the current sprint ID, and add the tasks to the sprint.","[
+  {
+    ""tool_name"": ""create_actionable_tasks_from_text"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""text"",
+        ""argument_value"": ""MeetingNotes""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""add_work_items_to_sprint"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""work_ids"",
+        ""argument_value"": ""$$PREV[0]""
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  }
+]",,
+Retrieve the ID of the current sprint and list all work items associated with that sprint.,"[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Find all work items similar to ""ISSUE-789"" and prioritize them.","[
+  {
+    ""tool_name"": ""get_similar_work_item"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""work_id"",
+        ""argument_value"": ""ISSUE-789""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""prioritize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Search for objects related to ""ProjectX,"" retrieve the work items, and create actionable tasks from the summary.","[
+  {
+    ""tool_name"": ""search_object_by_name"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""query"",
+        ""argument_value"": ""ProjectX""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""create_actionable_tasks_from_text"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""text"",
+        ""argument_value"": ""$$PREV[2]""
+      }
+    ]
+  }
+]",,
+"List all tasks in the ""In Progress"" stage, owned by the current user, and summarize them.","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""In Progress""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current user ID and create actionable tasks from a given text ""Project Update.""","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""create_actionable_tasks_from_text"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""text"",
+        ""argument_value"": ""Project Update""
+      }
+    ]
+  }
+]",,
+"List all tasks owned by ""DEVU-789"" with a severity of ""blocker"" and prioritize them.","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-789""]
+      },
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""blocker""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""prioritize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+Retrieve the ID of the current sprint and add all tasks owned by the current user to that sprint.,"[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""add_work_items_to_sprint"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""work_ids"",
+        ""argument_value"": ""$$PREV[1]""
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Summarize all tasks associated with part ""CAPL-456"" and owned by user ""DEVU-789.""","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""applies_to_part"",
+        ""argument_value"": [""CAPL-456""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-789""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Search for objects related to ""CustomerABC,"" retrieve the work items, and summarize them.","[
+  {
+    ""tool_name"": ""search_object_by_name"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""query"",
+        ""argument_value"": ""CustomerABC""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  }
+]",,
+" List all tasks with priority ""p2"" and owned by ""DEVU-789,"" then prioritize them.","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""issue.priority"",
+        ""argument_value"": [""p2""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-789""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""prioritize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current sprint ID and add all tasks with severity ""high"" to that sprint.","[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""high""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""add_work_items_to_sprint"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""work_ids"",
+        ""argument_value"": ""$$PREV[1]""
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+Retrieve the ID of the current sprint and list all tasks associated with that sprint.,"[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]
+",,
+"Summarize all tasks in the ""backlog"" stage owned by ""DEVU-789.""","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""backlog""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-789""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Retrieve the ID of the current sprint and add all tasks with priority ""p0"" to that sprint.","[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""issue.priority"",
+        ""argument_value"": [""p0""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""add_work_items_to_sprint"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""work_ids"",
+        ""argument_value"": ""$$PREV[1]""
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Search for objects related to ""ProjectY,"" retrieve the work items, and create actionable tasks from the summary.","[
+  {
+    ""tool_name"": ""search_object_by_name"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""query"",
+        ""argument_value"": ""ProjectY""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""create_actionable_tasks_from_text"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""text"",
+        ""argument_value"": ""$$PREV[2]""
+      }
+    ]
+  }
+]",,
+" Retrieve the ID of the current sprint and list all tasks with severity ""medium"" associated with that sprint.","[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""medium""]
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"List all tasks created by ""DEVU-789"" and add them to the current sprint.","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""created_by"",
+        ""argument_value"": [""DEVU-789""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""add_work_items_to_sprint"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""work_ids"",
+        ""argument_value"": ""$$PREV[0]""
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  }
+]",,
+"Find work items similar to ""TASK-456"" and create actionable tasks from the summary.","[
+  {
+    ""tool_name"": ""get_similar_work_item"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""work_id"",
+        ""argument_value"": ""TASK-456""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""create_actionable_tasks_from_text"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""text"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current user ID and list all tasks in the ""completed"" stage owned by that user.","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""completed""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"List all tasks associated with part ""ENH-789"" and owned by ""DEVU-456,"" then prioritize them.","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""applies_to_part"",
+        ""argument_value"": [""ENH-789""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-456""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""prioritize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Search for objects related to ""ProjectZ,"" retrieve the work items, and summarize them.","[
+  {
+    ""tool_name"": ""search_object_by_name"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""query"",
+        ""argument_value"": ""ProjectZ""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  }
+]",,
+"Retrieve the ID of the current sprint and add all tasks with priority ""p1"" to that sprint.","[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""issue.priority"",
+        ""argument_value"": [""p1""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""add_work_items_to_sprint"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""work_ids"",
+        ""argument_value"": ""$$PREV[1]""
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"List all tasks with severity ""low"" and owned by the current user.","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""low""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+" Summarize all tasks in the ""triage"" stage with severity ""high"" owned by ""DEVU-123.""","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""triage""]
+      },
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""high""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-123""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current sprint ID and add all tasks with severity ""medium"" and ""low"" to that sprint.","[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""medium"", ""low""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""add_work_items_to_sprint"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""work_ids"",
+        ""argument_value"": ""$$PREV[1]""
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Retrieve the ID of the current sprint and list all tasks with severity ""high"" owned by ""DEVU-456.""","[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""high""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-456""]
+      }
+    ]
+  }
+]",,
+"Search for objects related to ""CustomerXYZ,"" retrieve the work items, and summarize them.","[
+  {
+    ""tool_name"": ""search_object_by_name"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""query"",
+        ""argument_value"": ""CustomerXYZ""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current user ID and create actionable tasks from a given text ""Weekly Update.""","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""create_actionable_tasks_from_text"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""text"",
+        ""argument_value"": ""Weekly Update""
+      }
+    ]
+  }
+]",,
+"List all tasks in the ""pending"" stage with priority ""p1"" owned by ""DEVU-789"" and prioritize them.","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""pending""]
+      },
+      {
+        ""argument_name"": ""issue.priority"",
+        ""argument_value"": [""p1""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-789""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""prioritize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current user ID and list all tasks in the ""in-progress"" stage owned by that user.","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""in-progress""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Find work items similar to ""ENH-456"" and summarize them.","[
+  {
+    ""tool_name"": ""get_similar_work_item"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""work_id"",
+        ""argument_value"": ""ENH-456""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+Retrieve the ID of the current sprint and list all tasks associated with that sprint.,"[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"List all tasks in the ""backlog"" stage with severity ""blocker"" owned by ""DEVU-456.""","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""backlog""]
+      },
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""blocker""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-456""]
+      }
+    ]
+  }
+]",,
+"Search for objects related to ""ProjectA,"" retrieve the work items, and create actionable tasks from the summary.
+","[
+  {
+    ""tool_name"": ""search_object_by_name"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""query"",
+        ""argument_value"": ""ProjectA""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""create_actionable_tasks_from_text"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""text"",
+        ""argument_value"": ""$$PREV[2]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current user ID and list all tasks with priority ""p2"" owned by that user.","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""issue.priority"",
+        ""argument_value"": [""p2""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"List all tasks with severity ""medium"" and ""high"" owned by ""DEVU-789"" and prioritize them.","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""medium"", ""high""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-789""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""prioritize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Summarize all tasks in the ""to-do"" stage owned by ""DEVU-123.""","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""to-do""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-123""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current sprint ID and list all tasks with severity ""low"" associated with that sprint.","[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""low""]
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Search for objects related to ""CustomerB,"" retrieve the work items, and create actionable tasks from the summary.","[
+  {
+    ""tool_name"": ""search_object_by_name"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""query"",
+        ""argument_value"": ""CustomerB""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""create_actionable_tasks_from_text"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""text"",
+        ""argument_value"": ""$$PREV[2]""
+      }
+    ]
+  }
+]",,
+"Search for objects related to ""CustomerB,"" retrieve the work items, and create actionable tasks from the summary.","[
+  {
+    ""tool_name"": ""search_object_by_name"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""query"",
+        ""argument_value"": ""CustomerB""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""create_actionable_tasks_from_text"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""text"",
+        ""argument_value"": ""$$PREV[2]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current user ID and list all tasks with severity ""blocker"" owned by that user.","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""blocker""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current user ID and list all tasks in the ""review"" stage owned by that user.","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""review""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+" Retrieve the current sprint ID and list all tasks with severity ""medium"" owned by ""DEVU-123"" and add them to that sprint.","[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""medium""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-123""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""add_work_items_to_sprint"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""work_ids"",
+        ""argument_value"": ""$$PREV[1]""
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Summarize all tasks with priority ""p0"" and owned by ""DEVU-789.""","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""issue.priority"",
+        ""argument_value"": [""p0""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-789""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]
+",,
+"Retrieve the ID of the current sprint and list all tasks in the ""completed"" stage associated with that sprint.","[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""completed""]
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]
+",,
+"Search for objects related to ""ProjectX,"" retrieve the work items, and prioritize them.","[
+  {
+    ""tool_name"": ""search_object_by_name"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""query"",
+        ""argument_value"": ""ProjectX""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""prioritize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current user ID and list all tasks with priority ""p1"" owned by that user.","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""issue.priority"",
+        ""argument_value"": [""p1""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+" List all tasks with severity ""high"" and ""medium"" owned by ""DEVU-456"" and summarize them.","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""high"", ""medium""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-456""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Retrieve the ID of the current sprint and add all tasks with severity ""blocker"" and ""critical"" to that sprint.","[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""blocker"", ""critical""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""add_work_items_to_sprint"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""work_ids"",
+        ""argument_value"": ""$$PREV[1]""
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current user ID and create actionable tasks from a given text ""Monthly Report.""","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""create_actionable_tasks_from_text"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""text"",
+        ""argument_value"": ""Monthly Report""
+      }
+    ]
+  }
+]",,
+"List all tasks in the ""review"" stage with priority ""p2"" owned by ""DEVU-789"" and prioritize them.","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""review""]
+      },
+      {
+        ""argument_name"": ""issue.priority"",
+        ""argument_value"": [""p2""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-789""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""prioritize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+" Retrieve the current user ID and list all tasks in the ""in-progress"" stage owned by that user.","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""in-progress""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Search for objects related to ""ClientA,"" retrieve the work items, and create actionable tasks from the summary.","[
+  {
+    ""tool_name"": ""search_object_by_name"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""query"",
+        ""argument_value"": ""ClientA""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""create_actionable_tasks_from_text"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""text"",
+        ""argument_value"": ""$$PREV[2]""
+      }
+    ]
+  }
+]",,
+"Retrieve the ID of the current sprint and list all tasks in the ""to-do"" stage associated with that sprint.","[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""to-do""]
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"List all tasks in the ""pending"" stage with severity ""medium"" owned by ""DEVU-123"" and prioritize them.","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""pending""]
+      },
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""medium""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-123""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""prioritize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Retrieve the ID of the current sprint and add all tasks with priority ""p0"" owned by ""DEVU-789"" to that sprint.","[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""issue.priority"",
+        ""argument_value"": [""p0""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-789""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""add_work_items_to_sprint"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""work_ids"",
+        ""argument_value"": ""$$PREV[1]""
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+" Search for objects related to ""ProjectY,"" retrieve the work items, and summarize them.","[
+  {
+    ""tool_name"": ""search_object_by_name"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""query"",
+        ""argument_value"": ""ProjectY""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  }
+]",,
+"List all tasks in the ""pending"" stage with severity ""low"" owned by ""DEVU-456"" and prioritize them.","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""pending""]
+      },
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""low""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-456""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""prioritize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Retrieve the ID of the current sprint and list all tasks in the ""in-progress"" stage associated with that sprint.","[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""in-progress""]
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"List all tasks with severity ""blocker"" and ""critical"" owned by ""DEVU-123"" and summarize them.","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""blocker"", ""critical""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-123""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]
+",,
+"Retrieve the current user ID and list all tasks in the ""backlog"" stage owned by that user.","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""backlog""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]
+",,
+"Search for objects related to ""ClientB,"" retrieve the work items, and create actionable tasks from the summary.","[
+  {
+    ""tool_name"": ""search_object_by_name"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""query"",
+        ""argument_value"": ""ClientB""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""create_actionable_tasks_from_text"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""text"",
+        ""argument_value"": ""$$PREV[2]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current sprint ID and add all tasks with severity ""high"" owned by ""DEVU-456"" to that sprint.","[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""high""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-456""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""add_work_items_to_sprint"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""work_ids"",
+        ""argument_value"": ""$$PREV[1]""
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current user ID and list all tasks with priority ""p2"" owned by that user.","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""issue.priority"",
+        ""argument_value"": [""p2""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Retrieve the ID of the current sprint and list all tasks in the ""completed"" stage associated with that sprint.","[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""completed""]
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"List all tasks in the ""triage"" stage with severity ""medium"" owned by ""DEVU-789"" and prioritize them.","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""triage""]
+      },
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""medium""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-789""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""prioritize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current user ID and create actionable tasks from a given text ""Weekly Meeting Notes.""","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""create_actionable_tasks_from_text"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""text"",
+        ""argument_value"": ""Weekly Meeting Notes""
+      }
+    ]
+  }
+]",,
+"List all tasks with priority ""p1"" owned by ""DEVU-456"" and prioritize them.","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""issue.priority"",
+        ""argument_value"": [""p1""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-456""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""prioritize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Search for objects related to ""ProjectZ,"" retrieve the work items, and summarize them.","[
+  {
+    ""tool_name"": ""search_object_by_name"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""query"",
+        ""argument_value"": ""ProjectZ""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current sprint ID and add all tasks with severity ""low"" owned by ""DEVU-123"" to that sprint.","[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""low""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-123""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""add_work_items_to_sprint"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""work_ids"",
+        ""argument_value"": ""$$PREV[1]""
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current user ID and list all tasks with severity ""medium"" owned by that user.","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""medium""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Search for objects related to ""CustomerX,"" retrieve the work items, and create actionable tasks from the summary.","[
+  {
+    ""tool_name"": ""search_object_by_name"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""query"",
+        ""argument_value"": ""CustomerX""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""works_list"",
+  ""arguments"": [
+    {
+      ""argument_name"": ""owned_by"",
+      ""argument_value"": ""$$PREV[0]""
+    }
+  ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""create_actionable_tasks_from_text"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""text"",
+        ""argument_value"": ""$$PREV[2]""
+      }
+    ]
+  }
+]",,
+"Retrieve the ID of the current sprint and list all tasks in the ""pending"" stage associated with that sprint.","[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""pending""]
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"List all tasks in the ""review"" stage with severity ""high"" owned by ""DEVU-789"" and prioritize them.","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""review""]
+      },
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""high""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-789""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""prioritize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current user ID and list all tasks with priority ""p0"" owned by that user.","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""issue.priority"",
+        ""argument_value"": [""p0""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Search for objects related to ""ProjectA,"" retrieve the work items, and summarize them.","[
+  {
+    ""tool_name"": ""search_object_by_name"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""query"",
+        ""argument_value"": ""ProjectA""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""summarize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current sprint ID and add all tasks with severity ""medium"" owned by ""DEVU-456"" to that sprint.","[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""medium""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-456""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""add_work_items_to_sprint"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""work_ids"",
+        ""argument_value"": ""$$PREV[1]""
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+" Retrieve the current user ID and create actionable tasks from a given text ""Monthly Report Update.""","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""create_actionable_tasks_from_text"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""text"",
+        ""argument_value"": ""Monthly Report Update""
+      }
+    ]
+  }
+]",,
+"Retrieve the ID of the current sprint and list all tasks in the ""ready for testing"" stage associated with that sprint.","[
+  {
+    ""tool_name"": ""get_sprint_id"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""ready for testing""]
+      },
+      {
+        ""argument_name"": ""sprint_id"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"Search for objects related to ""ClientB,"" retrieve the work items, and prioritize them.","[
+  {
+    ""tool_name"": ""search_object_by_name"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""query"",
+        ""argument_value"": ""ClientB""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""prioritize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[1]""
+      }
+    ]
+  }
+]",,
+"Retrieve the current user ID and list all tasks with severity ""low"" owned by that user.","[
+  {
+    ""tool_name"": ""who_am_i"",
+    ""arguments"": []
+  },
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""ticket.severity"",
+        ""argument_value"": [""low""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
+"List all tasks in the ""completed"" stage with priority ""p1"" owned by ""DEVU-789"" and prioritize them.","[
+  {
+    ""tool_name"": ""works_list"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""stage.name"",
+        ""argument_value"": [""completed""]
+      },
+      {
+        ""argument_name"": ""issue.priority"",
+        ""argument_value"": [""p1""]
+      },
+      {
+        ""argument_name"": ""owned_by"",
+        ""argument_value"": [""DEVU-789""]
+      }
+    ]
+  },
+  {
+    ""tool_name"": ""prioritize_objects"",
+    ""arguments"": [
+      {
+        ""argument_name"": ""objects"",
+        ""argument_value"": ""$$PREV[0]""
+      }
+    ]
+  }
+]",,
