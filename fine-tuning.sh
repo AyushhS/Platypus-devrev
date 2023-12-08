@@ -1,4 +1,4 @@
-torchrun --nproc_per_node=2 --master_port=1234 finetune.py \
+torchrun --nproc_per_node=4 --master_port=1234 finetune.py \
     --base_model garage-bAInd/Platypus-30B \
     --data-path dataset.json \
     --output_dir ./llama2-platypus-30B \
