@@ -1,5 +1,5 @@
 torchrun --nproc_per_node=4 --master_port=1234 finetune.py \
-    --base_model garage-bAInd/Platypus2-7B \
+    --base_model meta-llama/Llama-2-13b-hf \
     --data-path dataset_train.csv \
     --output_dir ./../llama2-platypus-7B \
     --batch_size 16 \
